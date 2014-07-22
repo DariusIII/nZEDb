@@ -4,9 +4,7 @@ require_once nZEDb_LIBS . 'GiantBombAPI.php';
 
 // Test if your giantbomb key is working.
 
-$s  = new Sites();
-$site = $s->get();
-$giantbombkey = $site->giantbombkey;
+$giantbombkey = (new \nzedb\db\Settings())->getSetting('giantbombkey');
 $c = new ColorCLI();
 $obj = new GiantBomb($giantbombkey, $resp = "json");
 
